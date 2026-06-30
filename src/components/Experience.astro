@@ -1,0 +1,80 @@
+---
+const experiences = [
+	{
+		date: "Febrero 2026 - Presente",
+		title: "Analista de Procesos y Digitalización",
+		company: "Maibound",
+		type: "Contrato indefinido",
+		logo: "/logos/maibound.png",
+		summary:
+			"Análisis y documentación de procesos internos para detectar mejoras, reducir tareas manuales y ordenar flujos de trabajo.",
+		tasks: [
+			"Recogida de requisitos con distintos departamentos.",
+			"Documentación funcional y técnica de procesos.",
+			"Propuestas de digitalización y mejora operativa.",
+		],
+	},
+	{
+		date: "Julio 2025 - Septiembre 2025",
+		title: "Servicio de Postventa",
+		company: "PcComponentes",
+		type: "Contrato temporal",
+		logo: "/logos/pccomponentes.png",
+		summary:
+			"Atención postventa en un entorno de alto volumen, con gestión de incidencias y comunicación directa con clientes.",
+		tasks: [
+			"Seguimiento y resolución de incidencias.",
+			"Priorización de solicitudes con tiempos ajustados.",
+			"Coordinación con otros equipos para cerrar casos.",
+		],
+	},
+	{
+		date: "Abril 2024 - Junio 2024",
+		title: "Soporte Técnico y Atención al Cliente",
+		company: "Unidata",
+		type: "Prácticas",
+		logo: "/logos/unidata.png",
+		summary:
+			"Soporte técnico de primer nivel y asistencia a clientes, aprendiendo a diagnosticar problemas y comunicar soluciones de forma clara.",
+		tasks: [
+			"Resolución de incidencias básicas de hardware y software.",
+			"Registro y gestión de solicitudes técnicas.",
+			"Apoyo al equipo técnico en tareas de soporte.",
+		],
+	},
+];
+---
+
+<section class="section experience-section" id="experiencia" aria-labelledby="experience-title">
+	<div class="container split-layout">
+		<div class="section-heading reveal-on-scroll">
+			<p class="section-kicker">Experiencia</p>
+			<h2 id="experience-title">Experiencia en procesos, soporte y comunicación.</h2>
+			<p>
+				Estas experiencias no son puestos de desarrollo, pero me han dado base profesional: entender problemas, documentar, priorizar y comunicar con personas de perfiles distintos.
+			</p>
+		</div>
+
+		<div class="timeline reveal-on-scroll">
+			{experiences.map((experience) => (
+				<article class="timeline-item">
+					<div class="timeline-logo">
+						<img src={experience.logo} alt={`Logo de ${experience.company}`} loading="lazy" decoding="async" />
+					</div>
+
+					<div class="timeline-content">
+						<p class="timeline-date">{experience.date}</p>
+						<h3>{experience.title}</h3>
+						<p class="timeline-company">{experience.company} · {experience.type}</p>
+						<p>{experience.summary}</p>
+						<ul>
+							{experience.tasks.map((task) => (
+								<li>{task}</li>
+							))}
+						</ul>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

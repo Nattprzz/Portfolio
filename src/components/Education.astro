@@ -1,0 +1,41 @@
+---
+const education = [
+	{
+		title: "CFGS Desarrollo de Aplicaciones Web",
+		shortTitle: "DAW",
+		period: "2024 - 2026",
+		logo: "/logos/daw.svg",
+		description: "Base en desarrollo frontend, backend, bases de datos, APIs REST y despliegue de aplicaciones web.",
+	},
+	{
+		title: "CFGM Sistemas Microinformáticos y Redes",
+		shortTitle: "SMR",
+		period: "2022 - 2024",
+		logo: "/logos/smr.svg",
+		description: "Base técnica en sistemas, redes, soporte informático y mantenimiento de equipos.",
+	},
+];
+---
+
+<section class="section education-section" id="formacion" aria-labelledby="education-title">
+	<div class="container">
+		<div class="section-heading section-heading-wide reveal-on-scroll">
+			<p class="section-kicker">Formación</p>
+			<h2 id="education-title">Formación técnica.</h2>
+		</div>
+
+		<div class="education-grid reveal-on-scroll">
+			{education.map((item) => (
+				<article class="education-card">
+					<img src={item.logo} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+					<div>
+						<p>{item.period}</p>
+						<h3>{item.shortTitle}</h3>
+						<strong>{item.title}</strong>
+						<span>{item.description}</span>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

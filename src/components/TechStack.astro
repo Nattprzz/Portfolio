@@ -1,0 +1,45 @@
+---
+const groups = [
+	{
+		name: "Frontend",
+		items: ["Angular", "TypeScript", "Astro", "Next.js", "HTML", "CSS"],
+	},
+	{
+		name: "Backend",
+		items: ["Symfony", "PHP", "REST APIs", "Stripe"],
+	},
+	{
+		name: "Datos",
+		items: ["PostgreSQL", "Supabase", "MySQL"],
+	},
+	{
+		name: "Herramientas",
+		items: ["Docker", "Git", "Vercel", "Railway", "Postman"],
+	},
+];
+---
+
+<section class="section stack-section" id="stack" aria-labelledby="stack-title">
+	<div class="container">
+		<div class="section-heading section-heading-wide reveal-on-scroll">
+			<p class="section-kicker">Stack</p>
+			<h2 id="stack-title">Stack principal.</h2>
+			<p>
+				Trabajo con un stack web práctico: frontend con Angular y TypeScript, backend con Symfony y PHP, datos en PostgreSQL o Supabase y despliegues en Vercel y Railway.
+			</p>
+		</div>
+
+		<div class="stack-grid reveal-on-scroll">
+			{groups.map((group) => (
+				<article class="stack-card">
+					<h3>{group.name}</h3>
+					<ul>
+						{group.items.map((item) => (
+							<li>{item}</li>
+						))}
+					</ul>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

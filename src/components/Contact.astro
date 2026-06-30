@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+
+const email = "natt28.pg@gmail.com";
+const github = "https://github.com/Nattprzz";
+const linkedin = "https://linkedin.com/in/Nattprzz";
+---
+
+<section class="section contact-section" id="contacto" aria-labelledby="contact-title">
+	<div class="container">
+		<div class="contact-card reveal-on-scroll">
+			<div>
+				<p class="section-kicker">Contacto</p>
+				<h2 id="contact-title">Busco mi primera oportunidad en desarrollo web.</h2>
+				<p>
+					Me interesa incorporarme a un equipo donde pueda aportar en tareas reales, seguir mejorando como desarrolladora y trabajar con una base técnica seria.
+				</p>
+			</div>
+
+			<div class="contact-actions" aria-label="Canales de contacto">
+				<a class="button button-primary" href="/contacto">
+					<Icon name="tabler:mail" aria-hidden="true" />
+					Email
+				</a>
+				<a class="button button-secondary" href={linkedin} target="_blank" rel="noopener noreferrer">
+					<Icon name="tabler:brand-linkedin" aria-hidden="true" />
+					LinkedIn
+				</a>
+				<a class="button button-secondary" href={github} target="_blank" rel="noopener noreferrer">
+					<Icon name="tabler:brand-github" aria-hidden="true" />
+					GitHub
+				</a>
+				<a class="button button-secondary" href="/CV Natalia.pdf" target="_blank" rel="noopener">
+					<Icon name="tabler:file-text" aria-hidden="true" />
+					CV
+				</a>
+				<button class="button button-ghost" type="button" data-copy-email={email}>
+					<Icon name="tabler:copy" aria-hidden="true" />
+					Copiar email
+				</button>
+			</div>
+
+			<p class="copy-status" role="status" aria-live="polite"></p>
+		</div>
+	</div>
+</section>
+
+<script>
+	const button = document.querySelector<HTMLButtonElement>("[data-copy-email]");
+	const status = document.querySelector<HTMLElement>(".copy-status");
+
+	button?.addEventListener("click", async () => {
+		const email = button.dataset.copyEmail ?? "";
+
+		try {
+			await navigator.clipboard.writeText(email);
+			if (status) status.textContent = "Email copiado.";
+		} catch {
+			if (status) status.textContent = "No se ha podido copiar automáticamente.";
+		}
+	});
+</script>

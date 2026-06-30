@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon/components";
+import { projects } from "../data/projects";
+---
+
+<section class="section projects-section" id="proyectos" aria-labelledby="projects-title">
+	<div class="container">
+		<div class="section-heading section-heading-wide reveal-on-scroll">
+			<p class="section-kicker">Proyectos</p>
+			<h2 id="projects-title">Proyectos completos, con decisiones reales.</h2>
+			<p>
+				Estos proyectos resumen mejor mi perfil: construir algo completo, tomar decisiones de producto sencillas y conectar las piezas necesarias para que funcione de principio a fin.
+			</p>
+		</div>
+
+		<div class="projects-grid">
+			{projects.map((project, index) => (
+				<article class={`project-card ${project.featured ? "project-card-featured" : ""} reveal-on-scroll`}>
+					<div class={`project-preview project-preview-${index + 1}`} aria-label={`Vista previa de ${project.name}`}>
+						<div class="preview-topbar" aria-hidden="true">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+
+						<img
+							class="project-image"
+							src={project.image}
+							alt={`Captura de pantalla de ${project.name}`}
+							loading={project.featured ? "eager" : "lazy"}
+							decoding="async"
+						/>
+					</div>
+
+					<div class="project-content">
+						<div>
+							<p class="project-label">{project.label}</p>
+							<h3>{project.name}</h3>
+							<p>{project.description}</p>
+						</div>
+
+						<ul class="metric-list" aria-label={`Funcionalidades de ${project.name}`}>
+							{project.metrics.map((metric) => (
+								<li>{metric}</li>
+							))}
+						</ul>
+
+						<ul class="badge-list" aria-label={`Tecnologías usadas en ${project.name}`}>
+							{project.technologies.map((tech) => (
+								<li>{tech}</li>
+							))}
+						</ul>
+
+						<div class="project-actions">
+							<a class="button button-small button-primary" href={project.demoUrl} target="_blank" rel="noreferrer">
+								<Icon name="tabler:external-link" aria-hidden="true" />
+								Ver proyecto
+							</a>
+						</div>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,31 @@
+---
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Education from "../components/Education.astro";
+import Experience from "../components/Experience.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Navbar from "../components/Navbar.astro";
+import Projects from "../components/Projects.astro";
+import TechStack from "../components/TechStack.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+	title="Natalia Pérez | Desarrolladora Web"
+	description="Portfolio de Natalia Pérez, desarrolladora web junior enfocada en aplicaciones completas con Angular, Symfony, Astro, TypeScript y PostgreSQL."
+>
+	<Navbar />
+
+	<main>
+		<Hero />
+		<About />
+		<Projects />
+		<TechStack />
+		<Experience />
+		<Education />
+		<Contact />
+	</main>
+
+	<Footer />
+</Layout>

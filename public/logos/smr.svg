@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+	<title id="title">SMR placeholder logo</title>
+	<rect width="160" height="160" rx="32" fill="#07111f"/>
+	<rect x="1" y="1" width="158" height="158" rx="31" fill="none" stroke="#38bdf8" stroke-opacity=".32"/>
+	<rect x="44" y="45" width="72" height="48" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="6"/>
+	<path d="M64 115h32M80 94v21" stroke="#f8fbff" stroke-width="7" stroke-linecap="round"/>
+	<path d="M52 118h56" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+</svg>

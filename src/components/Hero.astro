@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+
+const linkedin = "https://linkedin.com/in/Nattprzz";
+const github = "https://github.com/Nattprzz";
+---
+
+<section class="hero section" id="inicio" aria-labelledby="hero-title">
+	<div class="container hero-grid">
+		<div class="hero-copy reveal-on-scroll">
+			<p class="hero-badge">
+				<span aria-hidden="true"></span>
+				Trabajando actualmente
+			</p>
+
+			<h1 id="hero-title">Natalia Pérez</h1>
+
+			<p class="hero-terminal">~/ Full-Stack Developer</p>
+
+			<p class="hero-text">
+				Desarrolladora web junior con base full stack. Trabajo en proyectos completos con interfaz, APIs, base de datos y despliegue, cuidando que cada parte tenga sentido dentro del producto.
+			</p>
+
+			<div class="hero-actions" aria-label="Acciones principales">
+				<a class="button button-primary" href="#contacto">
+					<Icon name="tabler:send" aria-hidden="true" />
+					Contactar
+				</a>
+
+				<a class="button button-secondary" href={linkedin} target="_blank" rel="noopener noreferrer">
+					<Icon name="tabler:brand-linkedin" aria-hidden="true" />
+					LinkedIn
+				</a>
+
+				<a class="button button-ghost" href={github} target="_blank" rel="noopener noreferrer">
+					<Icon name="tabler:brand-github" aria-hidden="true" />
+					GitHub
+				</a>
+			</div>
+		</div>
+
+		<div class="hero-media reveal-on-scroll">
+			<div class="photo-frame">
+				<img
+					src="/foto_perfil.png"
+					alt="Retrato de Natalia Pérez"
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<span class="floating-label label-role">Desarrolladora Web</span>
+			<span class="floating-label label-status">Trabajando actualmente</span>
+		</div>
+	</div>
+</section>
